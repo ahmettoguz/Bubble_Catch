@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- font-family: 'Kanit', sans-serif; -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- font-family: 'Raleway', sans-serif; -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap"
+      rel="stylesheet"
+    />
+    <!-- font-family: 'Rubik Dirt', cursive; -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap"
+      rel="stylesheet"
+    />
+    <!-- font-family: 'Gloria Hallelujah', cursive; -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
+      rel="stylesheet"
+    />
+    <!-- font-family: 'Lobster', cursive; -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Snippet&display=swap"
+      rel="stylesheet"
+    />
+    <!-- font-family: 'Snippet', sans-serif; -->
+    <!-- font -->
+    <script src="../Js/jquery-3.6.0.min.js"></script>
+    <script src="../Js/bubbleCatch.js"></script>
+    <title>Document</title>
+  </head>
+  <style>
+    html,
+    body,
+    #allMain {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      /* overflow: hidden; */
+    }
+
+    /* START SCREEN */
+    #startScreen {
+      user-select: none;
+      background-image: url(/Images/bubble.gif);
+      background-color: #fa8ee3;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+    }
+
+    #startTitle {
+      text-shadow: -5px 5px 4px rgba(0, 187, 255, 0.586), -8px 8px 8px white;
+      border-radius: 10px;
+      background-color: #fa8ee3;
+      word-spacing: 20px;
+      letter-spacing: 5px;
+      padding-top: 10px;
+      font-family: "Rubik Dirt", cursive;
+      color: #2272af;
+      font-size: 70px;
+    }
+
+    #startDescription {
+      border-radius: 10px;
+      background-color: #fa8ee3;
+      padding-left: 60px;
+      padding-right: 60px;
+      font-family: "Lobster", cursive;
+      font-size: 30px;
+      width: 450px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #startDescription p {
+      margin: 5px;
+    }
+
+    #difficultyContainer {
+      padding-top: 10px;
+      padding-left: 30px;
+      padding-right: 20px;
+      background-color: #fa8ee3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 300px;
+      height: 70px;
+    }
+
+    #EasyButton,
+    #MediumButton,
+    #HardButton {
+      box-shadow: 1px 1px 1px black;
+      border: 3px solid black;
+      width: 150px;
+      height: 50px;
+      border-radius: 20px;
+      margin-left: 3px;
+      margin-right: 3px;
+      background-color: rgb(205, 202, 202);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Kanit", sans-serif;
+      font-weight: 400;
+      font-size: 20px;
+      transition: 0.5s;
+    }
+
+    #MediumButton {
+      outline: 2px solid black;
+      box-shadow: 2.5px 2.5px 2px black;
+      font-weight: 700;
+      background-color: rgb(255, 215, 36);
+      text-decoration: underline;
+      text-decoration-thickness: 3px;
+      text-underline-offset: 4px;
+    }
+
+    #EasyButton:hover,
+    #MediumButton:hover,
+    #HardButton:hover {
+      font-size: 23px;
+      font-weight: 700;
+    }
+
+    #startButton {
+      text-shadow: 5px 5px 2px rgb(102, 255, 0);
+      user-select: none;
+      font-family: "Gloria Hallelujah", cursive;
+      font-weight: 600;
+      font-size: 33px;
+      border: 3px solid black;
+      margin-top: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 150px;
+      height: 50px;
+      background-color: rgb(102, 255, 0);
+      color: black;
+      border-radius: 5px;
+      transition-duration: 2s;
+    }
+
+    @keyframes circleLights {
+      0% {
+        box-shadow: 0px 0px 5px red;
+      }
+      100% {
+        box-shadow: 0px 0px 50px red, 0px 0px 100px violet;
+      }
+    }
+
+    #startButton:hover {
+      background-color: rgb(70, 212, 255) !important;
+      transition-duration: 0.5s !important;
+      border-radius: 50% !important;
+      width: 125px !important;
+      height: 125px !important;
+      transform: translate(0%, -25%) rotate(-10deg) !important;
+      border: 5px solid black !important;
+      animation-name: circleLights !important;
+      animation-duration: 0.5s !important;
+      animation-iteration-count: infinite !important;
+      animation-timing-function: ease !important;
+      animation-direction: alternate !important;
+    }
+
+    #startInformationContainer {
+      font-family: "Snippet", sans-serif;
+      font-weight: 700;
+      font-size: 27px;
+      position: absolute;
+      top: 380px;
+      border-radius: 50px;
+      margin-top: 45px;
+      border: 3px solid black;
+      height: 250px;
+      width: 300px;
+      /* background-color: rgba(0, 187, 255, 0.586); */
+      background-color: rgb(113, 213, 229);
+      text-shadow: -1px 1px 2px black;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #startInformationContainer p {
+      margin: 0;
+      padding-top: 25px;
+    }
+
+    #startScreenTime,
+    #startScreenScore {
+      font-size: 30px;
+    }
+
+    /* PLAY SCREEN */
+    #playScreen {
+      display: none;
+      position: absolute;
+      top: 0px;
+      width: 100%;
+      background-image: url(../Images/background4.jpg);
+      background-size: cover;
+      background-position: 0px -200px;
+      flex-direction: column;
+      height: 100%;
+      justify-content: start;
+      align-items: center;
+    }
+
+    #playTitle {
+      text-shadow: -3px 3px 3px whitesmoke;
+      box-shadow: 2px -2px 2px black;
+      background-image: linear-gradient(180deg, rgb(0, 221, 255), aliceblue);
+      position: relative;
+      top: 2.5px;
+      border-top: 1px solid black;
+      border-left: 3px solid black;
+      border-right: 1px solid black;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      padding-left: 10px;
+      padding-right: 10px;
+      margin-top: 10px;
+      font-family: "Raleway", sans-serif;
+      font-size: 40px;
+      font-weight: 600;
+    }
+
+    #playInfo {
+      background-image: linear-gradient(0deg, orange, aliceblue);
+      /* background-color: rgb(200, 208, 191); */
+      box-shadow: 2px 2px 2px black;
+      font-family: "Kanit", sans-serif;
+      font-size: 40px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      border: 3px solid black;
+      border-radius: 10px;
+      height: 85px;
+      width: 560px;
+    }
+
+    #scoreContainer,
+    #timeContainer {
+      border-radius: 10px;
+      border: 3.5px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(255, 255, 255, 0.605);
+      height: 70px;
+      width: 250px;
+    }
+
+    #scoreDiv,
+    #timeDiv {
+      padding-left: 10px;
+      width: 50px;
+      flex-wrap: nowrap;
+    }
+
+    #playArea {
+      box-shadow: 5px 5px 4px black;
+      min-width: 700px;
+      width: 700px;
+      height: 500px;
+      background-color: rgba(251, 0, 113, 0.098);
+      border: 3px solid black;
+      border-radius: 20px;
+    }
+
+    #bubble {
+      background-color: white;
+      border: 5px solid black;
+      position: absolute;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+  <body>
+    <div id="allMain">
+      <div id="startScreen">
+        <div id="startTitle">Bubble Catch</div>
+        <div id="startDescription">
+          <p>Try to click bubble as fast as you can.</p>
+          <p>Before it will be too late :)</p>
+        </div>
+        <div id="difficultyContainer">
+          <div id="EasyButton" onclick="changeDifficulty(this)">Easy</div>
+          <div id="MediumButton" onclick="changeDifficulty(this)">Medium</div>
+          <div id="HardButton" onclick="changeDifficulty(this)">Hard</div>
+        </div>
+        <div id="startButton" onclick="startTest() ">Start</div>
+        <div id="startInformationContainer">
+          <p>Last Game Information</p>
+          <p id="startScreenDifficulty">Difficulty: Medium</p>
+          <p id="startScreenTime">Time: 5.2</p>
+          <p id="startScreenScore">Score: 52</p>
+        </div>
+      </div>
+      <div id="playScreen">
+        <div id="playTitle">Bubble Catch</div>
+        <div id="playInfo">
+          <div id="scoreContainer">
+            <span>Score:</span>
+            <div id="scoreDiv">0</div>
+          </div>
+          <div id="timeContainer">
+            <span>Time:</span>
+            <div id="timeDiv">0.0</div>
+          </div>
+        </div>
+        <div id="playArea"></div>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  currentDifficulty = "Medium";
+  easySpeedOfBubbles = 2000;
+  mediumSpeedOfBubbles = 1500;
+  hardSpeedOfBubbles = 1000;
+
+  speedOfBubbles = mediumSpeedOfBubbles;
+  increaseSpeed = 5;
+
+  bubbleX = 0;
+  bubbleY = 0;
+  bubbleR = 70;
+  bubbleShrinkR = 20;
+
+  playAreaX1 = 0;
+  playAreaX2 = 0;
+
+  playAreaY1 = 0;
+  playAreaY2 = 0;
+
+  score = 0;
+  expectedScore = 0;
+
+  second = 0;
+  minute = 0;
+
+  function setSpeed() {
+    if (currentDifficulty == "Medium") speedOfBubbles = mediumSpeedOfBubbles;
+    else if (currentDifficulty == "Easy") speedOfBubbles = easySpeedOfBubbles;
+    else speedOfBubbles = hardSpeedOfBubbles;
+  }
+
+  function startTest() {
+    // set speed
+    setSpeed();
+
+    // switch screens
+    $("#startScreen").fadeOut(1000);
+    $("#playScreen").fadeIn(1000, function () {
+      // time operation
+      timeInterval = setInterval(refreshTimer, 1000);
+    });
+    $("#playScreen").css("display", "flex");
+
+    //arrange start button css properties
+    $("#startButton").css({
+      "border-radius": "50%",
+      width: "125px",
+      height: "125px",
+      transform: "translate(0%, -25%) rotate(-10deg)",
+      border: "5px solid black",
+      "box-shadow": "0px 0px 50px red, 0px 0px 100px violet",
+    });
+
+    // get play area screen size
+    playAreaX1 = parseInt($("#playArea").position().left);
+    playAreaX2 = playAreaX1 + parseInt($("#playArea").css("width"));
+    playAreaY1 =
+      parseInt($("#playArea").position().top) +
+      parseInt($("#playArea").css("margin-top"));
+    playAreaY2 = playAreaY1 + parseInt($("#playArea").css("height"));
+
+    // start to display bubbles
+    displayBubblesTimeOut = setTimeout(displayBubbles, speedOfBubbles);
+  }
+
+  function getRandomPosition() {
+    // variable = Math.floor(Math.random() * (max + 1 - min)) + min;
+    bubbleX =
+      Math.floor(
+        Math.random() * (playAreaX2 - bubbleR + 1 - (playAreaX1 + bubbleR))
+      ) +
+      (playAreaX1 + bubbleR);
+
+    bubbleY =
+      Math.floor(
+        Math.random() * (playAreaY2 - bubbleR + 1 - (playAreaY1 + bubbleR))
+      ) +
+      (playAreaY1 + bubbleR);
+  }
+
+  function clickEventOfBubble() {
+    $("#bubble").unbind("click");
+    $("#bubble").bind("click", () => {
+      score++;
+      console.log("Score: " + score);
+      // remove bubble when clicked
+      $("#bubble").remove();
+
+      // refresh score
+      $("#scoreDiv").html(score);
+    });
+  }
+
+  function initializeToNewGame() {
+    // clear interval
+    clearInterval(timeInterval);
+
+    // set time
+    second = 0;
+    minute = 0;
+
+    // set score
+    score = 0;
+    expectedScore = 0;
+
+    // clear last bubble in play area
+    $("#bubble").remove();
+  }
+
+  function refreshEndGameInformations() {
+    $("#startScreenDifficulty").html(`Difficulty: ${currentDifficulty}`);
+    $("#startScreenTime").html(`Time: ${minute}.${second}`);
+    $("#startScreenScore").text(`Score: ${score}`);
+    setTimeout(function () {
+      $("#scoreDiv").html("0");
+      $("#timeDiv").html("0.0");
+    }, 1500);
+  }
+
+  function finishGame() {
+    // refresh end game information
+    refreshEndGameInformations();
+
+    // refresh start button
+    $("#startButton").css({
+      "box-shadow": "none",
+      "text-shadow": "5px 5px 2px rgb(102, 255, 0)",
+      border: "2px solid black",
+      width: "150px",
+      height: "50px",
+      "background-color": "rgb(102, 255, 0)",
+      color: "black",
+      "border-radius": "5px",
+      transform: "none",
+    });
+
+    // make visible end game information
+    $("#startInformationContainer").css("display", "flex");
+
+    // change screen
+    $("#playScreen").fadeOut(1000);
+    $("#startScreen").fadeIn(1000);
+
+    initializeToNewGame();
+
+    console.log("expected: ", expectedScore, "\nscore: ", score);
+  }
+
+  function checkScore() {
+    if (expectedScore > score) {
+      finishGame();
+      return false;
+    }
+    expectedScore++;
+    return true;
+  }
+
+  function changeBubbleColor() {
+    let r = Math.floor(Math.random() * 56) + 200;
+    let g = Math.floor(Math.random() * 56) + 200;
+    let b = Math.floor(Math.random() * 56) + 200;
+
+    $("#bubble").css("background-color", `rgb(${r},${g},${b})`);
+  }
+
+  function placeBubble() {
+    $("#bubble").remove();
+
+    $("#playArea").append(
+      `<div id="bubble" style=" left: ${bubbleX}px; top:${bubbleY}px; width:${bubbleR}px; height:${bubbleR}px;"></div>`
+    );
+
+    // change bubble color
+    changeBubbleColor();
+  }
+
+  function shrinkBubble() {
+    $("#bubble").animate(
+      { width: bubbleShrinkR, height: bubbleShrinkR },
+      speedOfBubbles
+    );
+  }
+
+  function refreshTimer() {
+    second++;
+    $("#timeDiv").html(`${minute}.${second}`);
+
+    if (second == 59) {
+      second = 0;
+      minute++;
+    }
+  }
+
+  function displayBubbles() {
+    // check the score
+    if (checkScore()) {
+      // get random position for bubble
+      getRandomPosition();
+
+      //place bubble to screen
+      placeBubble();
+
+      // shrink animation for bubbles
+      shrinkBubble();
+
+      // start click event
+      clickEventOfBubble();
+
+      // increase speed and continue with next round
+      speedOfBubbles -= increaseSpeed;
+      displayBubblesTimeOut = setTimeout(displayBubbles, speedOfBubbles);
+    }
+  }
+
+  $(function () {});
+</script>
+
+<!-- // var start = new Date();
+// setTimeout(function asdf() {
+//   var finish = new Date();
+//   console.log(
+//     String(finish - start) +
+//       "  " +
+//       String(finish.getMilliseconds() - start.getMilliseconds()) +
+//       " " +
+//       String(finish.getSeconds() - start.getSeconds()) +
+//       " " +
+//       String(finish.getMinutes() - start.getMinutes())
+//   );
+// }, 1000); -->
