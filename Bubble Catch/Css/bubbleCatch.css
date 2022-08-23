@@ -10,7 +10,7 @@ body,
 /* START SCREEN */
 #startScreen {
   user-select: none;
-  background-image: url(/Images/bubble.gif);
+  background-image: url(../Images/bubble.gif);
   background-color: #fa8ee3;
   background-size: cover;
   display: flex;
