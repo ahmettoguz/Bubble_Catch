@@ -54,11 +54,11 @@ function changeDifficulty(element) {
   }
 }
 
-const bubbleAudio1 = new Audio("../Audio/bubble1.mp3");
-const bubbleAudio2 = new Audio("../Audio/bubble2.mp3");
-const bubbleAudio3 = new Audio("../Audio/bubble3.mp3");
-const gameOverAudio2 = new Audio("../Audio/gameOver2.mp3");
-const gameStartAudio = new Audio("../Audio/gameStart.mp3");
+const bubbleAudio1 = new Audio("./assets/Audio/bubble1.mp3");
+const bubbleAudio2 = new Audio("./assets./Audio/bubble2.mp3");
+const bubbleAudio3 = new Audio("./assets./Audio/bubble3.mp3");
+const gameOverAudio2 = new Audio("./assets./Audio/gameOver2.mp3");
+const gameStartAudio = new Audio("./assets./Audio/gameStart.mp3");
 
 currentDifficulty = "Medium";
 easySpeedOfBubbles = 2000;
